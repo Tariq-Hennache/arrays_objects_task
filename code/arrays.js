@@ -40,9 +40,9 @@ console.log("There are " + stationCount + " stations.");
  * Which station is the third stop?
  */
 
-thirdStation = null;
+thirdStation = stations[2];
 
-// console.log("The third station is " + thirdStation);
+console.log("The third station is " + thirdStation);
 
 
 
@@ -51,7 +51,9 @@ thirdStation = null;
  * Someone put the wrong Berwick on the timetable! Update "North Berwick" to "Berwick-upon-Tweed".
  */
 
-// console.log(stations);
+stations[1] = "North Berwick"
+
+console.log(stations);
 
 
 
@@ -60,7 +62,9 @@ thirdStation = null;
  * How did Leeds get on there? Better remove it.
  */
 
-// console.log(stations);
+
+stations.splice(4,1)
+console.log(stations);
 
 
 
@@ -69,7 +73,9 @@ thirdStation = null;
  * We forgot about Darlington! Add it to the route between Newcastle and York.
  */
 
-// console.log(stations);
+stations.splice(3, 0, "Darlington")
+
+console.log(stations);
 
 
 
@@ -78,12 +84,22 @@ thirdStation = null;
  * Is Durham one of the stops?
  */
 
-stoppingAtDurham = null;
 
-// console.log(stoppingAtDurham);
+stoppingAtDurham = stations.includes("Durham")
+console.log(stoppingAtDurham);
 
 
 /**
  * Q9.
  * If we are stopping at Durham, print "Yay Durham!" to the terminal. If not print "Aww...".
  */
+const empty = [];
+ for(let stop in stations){
+    if(stop == "Durham"){
+        empty.push("Yay Durham!")
+    }else{
+        empty.push( "awwww")
+    }
+}
+
+console.log(empty)
